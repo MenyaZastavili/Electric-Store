@@ -1,0 +1,43 @@
+﻿<Page x:Class="ElectricStore.Pages.Order.EditProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ElectricStore.Pages.Order"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditProduct">
+
+    <Grid Background="#fff">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel VerticalAlignment="Center" Margin="50 0">
+            <Label>Введите название товара:</Label>
+            <TextBox Height="30" VerticalAlignment="Center" Name="ProductName" Text="{Binding tempProduct.Name}"></TextBox>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center" Margin="50 0" Grid.Row="1">
+            <Label>Введите категорию товара:</Label>
+            <TextBox Height="30" VerticalAlignment="Center" Name="ProductCategory" Text="{Binding tempProduct.Category}"></TextBox>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center" Margin="50 0" Grid.Row="2">
+            <Label>Введите цену товара:</Label>
+            <TextBox Height="30" VerticalAlignment="Center" Name="ProductPrice" Text="{Binding tempProduct.Price}"></TextBox>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center" Margin="50 0" Grid.Row="3">
+            <Label>Введите количество товара:</Label>
+            <TextBox Height="30" VerticalAlignment="Center" Name="ProductQuantity" Text="{Binding tempProduct.StockQuantity}"></TextBox>
+        </StackPanel>
+
+        <Button Grid.Row="5" Height="40" Width="180" Background="Transparent" BorderBrush="Black" BorderThickness="2" Click="editProduct">Обновить данные</Button>
+
+    </Grid>
+</Page>

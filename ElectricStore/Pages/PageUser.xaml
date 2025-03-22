@@ -1,0 +1,58 @@
+﻿<Page x:Class="ElectricStore.Pages.PageUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ElectricStore.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageUser">
+
+    <TabControl>
+        <TabItem Header="Каталог товаров">
+            <Grid>
+                <StackPanel Margin="10,10,10,75">
+                    <DataGrid Name="ProductList" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" Padding="3 10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Название" Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Price}" />
+                            <DataGridTextColumn Header="Категория" Binding="{Binding Category}" />
+                            <DataGridTextColumn Header="Количество на складе" Binding="{Binding StockQuantity}" />
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.Header>Корзина</DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Background="Transparent" BorderBrush="Black" BorderThickness="2" Click="orderProduct" Tag="{Binding Id}">
+                                            Добавить в корзину
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10">
+                    <TextBlock x:Name="TotalAmountTextBlock" HorizontalAlignment="Left" Margin="3">Общая сумма:</TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10">
+                    <Label>Введите название товара для поиска</Label>
+                    <TextBox Name="SearchInput" Height="30" TextChanged="SearchProduct"></TextBox>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Просмотр заказов">
+            <Grid>
+                <StackPanel Margin="10,10,10,75">
+                    <DataGrid IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" Name="OrderUserList" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding OrderDate}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Общая сумма" Binding="{Binding TotalAmount}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Статус готовности" Binding="{Binding Status}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Page>

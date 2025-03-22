@@ -1,0 +1,34 @@
+﻿<Page x:Class="ElectricStore.Pages.PageCreateAcc"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ElectricStore.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageCreateAcc">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="200 -200 200 5" VerticalAlignment="Center">
+            <TextBlock FontSize="14">Введите полное имя:</TextBlock>
+            <TextBox Height="30" VerticalAlignment="Center" x:Name="UName"></TextBox>
+        </StackPanel>
+        <StackPanel Margin="200 -90 200 5" VerticalAlignment="Center">
+            <TextBlock FontSize="14">Введите email:</TextBlock>
+            <TextBox Height="30" VerticalAlignment="Center" x:Name="UEmail"></TextBox>
+        </StackPanel>
+        <StackPanel Margin="200 20 200 5" VerticalAlignment="Center">
+            <TextBlock FontSize="14">Введите пароль:</TextBlock>
+            <PasswordBox Height="30" VerticalAlignment="Center" x:Name="UPassword" PasswordChanged="PasswordBox_PasswordChanged"/>
+        </StackPanel>
+        <StackPanel Margin="200 130 200 5" VerticalAlignment="Center">
+            <TextBlock FontSize="14">Подтвердите пароль:</TextBlock>
+            <PasswordBox Height="30" VerticalAlignment="Center" x:Name="txbPass" PasswordChanged="PasswordBox_PasswordChanged"/>
+        </StackPanel>
+
+        <Button x:Name="btncreate" IsEnabled="False" Height="30" Width="150" VerticalAlignment="Bottom" Margin="0 30" Background="CadetBlue" Click="btnRegIn_Click">Регистрация</Button>
+    </Grid>
+</Page>
