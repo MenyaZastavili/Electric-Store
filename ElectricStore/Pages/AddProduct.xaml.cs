@@ -63,7 +63,7 @@ namespace ElectricStore.Pages
 
                 this.NavigationService.Navigate(new PageAdmin());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Произошла ошибка при добавлении данных!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }

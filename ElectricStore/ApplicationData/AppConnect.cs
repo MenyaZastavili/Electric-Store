@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace ElectricStore.ApplicationData
 {
-
-    class AppConnect
+    public static class AppConnect
     {
-        public static ElectricStoreEntities model0db;
+        public static ElectricStoreEntities model0db = new ElectricStoreEntities();
     }
 }
